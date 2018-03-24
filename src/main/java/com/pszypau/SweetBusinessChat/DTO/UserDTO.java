@@ -4,13 +4,13 @@ package com.pszypau.SweetBusinessChat.DTO;
  * Created by Lenovo on 2018-03-24.
  */
 public class UserDTO {
-    private Long id;
+    private Integer id;
     private String uuid;
     private String name;
     private String email;
     private String password;
 
-    public UserDTO(Long id, String uuid, String name, String email, String password) {
+    public UserDTO(Integer id, String uuid, String name, String email, String password) {
         this.id = id;
         this.uuid = uuid;
         this.name = name;
@@ -18,11 +18,11 @@ public class UserDTO {
         this.password = password;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
