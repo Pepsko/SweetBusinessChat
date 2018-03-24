@@ -8,16 +8,15 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.UUID;
 
 @Entity
-@Table(name = "USERSTABLE")
+@Table(name = "users")
 public class UserEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     @NotBlank
     private String uuid = UUID.randomUUID().toString();
     @NotBlank
@@ -28,7 +27,7 @@ public class UserEntity implements UserDetails {
     @NotBlank
     private String password;
 
-    public UserEntity( String uuid,  String name,  String email,  String password) {
+    public UserEntity(@NotBlank String uuid, @NotBlank String name, @Email @NotBlank String email, @NotBlank String password) {
         this.uuid = uuid;
         this.name = name;
         this.email = email;
@@ -40,7 +39,7 @@ public class UserEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptySet();
+        return null;
     }
 
     @Override

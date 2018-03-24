@@ -29,7 +29,7 @@ public class UserService {
                 .map(userMapper::toUserDTO)
                 .collect(Collectors.toSet());
     }
-    public UserDTO findUserById(Long id) {
+    public UserDTO findUserById(Integer id) {
         return userMapper.toUserDTO(userRepository.findOne(id));
     }
 
