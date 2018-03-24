@@ -38,10 +38,4 @@ public class UserService {
         UserEntity userEntity = new UserEntity(user.getName(),user.getEmail(),encoder.encode(user.getPassword()),"USER");
         userRepository.save(userEntity);
     }
-
-   /* public UserDTO findUserByEmail(String email) {
-        return userMapper.toUserDTO(userRepository.findOneByEmail(email).orElseThrow(UserNotFoundException::new));
-    }*/
-
-
 }
