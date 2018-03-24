@@ -8,67 +8,91 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.UUID;
 
 @Entity
-@Table(name = "users")
-public class UserEntity implements UserDetails {
+@Table(name = "USERSTABLE")
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @NotBlank
-    private String uuid = UUID.randomUUID().toString();
+    private Integer id;
+    //@NotBlank
+  //  private String uuid = UUID.randomUUID().toString();
     @NotBlank
     private String name;
-    @Email
-    @NotBlank
-    private String email;
+   // @Email
+   // @NotBlank
+   // private String email;
     @NotBlank
     private String password;
+    @NotBlank
+    private String role;
 
-    public UserEntity(@NotBlank String uuid, @NotBlank String name, @Email @NotBlank String email, @NotBlank String password) {
-        this.uuid = uuid;
+    public UserEntity( String uuid,  String name,   String email,  String password, String role) {
+      //  this.uuid = uuid;
         this.name = name;
-        this.email = email;
+       // this.email = email;
         this.password = password;
+        this.role = role;
+    }
+
+    public UserEntity(String name, String password, String role) {
+        this.name = name;
+        this.password = password;
+        this.role = role;
     }
 
     public UserEntity() {
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public String getRole() {
+        return role;
     }
 
-    @Override
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+   // public String getUuid() {
+   //     return uuid;
+   // }
+
+   // public void setUuid(String uuid) {
+  //      this.uuid = uuid;
+   // }
+
+    public String getName() {
+        return name;
+    }
+
     public String getPassword() {
-        return null;
+        return password;
     }
 
-    @Override
-    public String getUsername() {
-        return null;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
+    //public String getEmail() {
+   //     return email;
+   // }
+
+   // public void setEmail(String email) {
+  //     this.email = email;
+   // }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
-    }
 }

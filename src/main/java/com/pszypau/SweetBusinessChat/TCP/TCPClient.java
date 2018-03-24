@@ -1,4 +1,4 @@
-package com.pszypau.SweetBusinessChat.TCPClient;
+package com.pszypau.SweetBusinessChat.TCP;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

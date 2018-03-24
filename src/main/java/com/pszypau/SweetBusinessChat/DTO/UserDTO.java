@@ -10,12 +10,15 @@ public class UserDTO {
     private String email;
     private String password;
 
-    public UserDTO(Integer id, String uuid, String name, String email, String password) {
+    public UserDTO(Integer id, String uuid,String name,  String email, String password) {
         this.id = id;
         this.uuid = uuid;
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public UserDTO() {
     }
 
     public Integer getId() {
