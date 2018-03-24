@@ -6,12 +6,12 @@ import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 @Entity
-@Table(name = "users")
+@Table(name = "USERSTABLE")
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
     @NotBlank
     private String uuid = UUID.randomUUID().toString();
     @NotBlank
@@ -24,7 +24,7 @@ public class UserEntity {
     @NotBlank
     private String password;
 
-    public UserEntity(@NotBlank String uuid, @NotBlank String name, @NotBlank String surname, @Email @NotBlank String email, @NotBlank String password) {
+    public UserEntity( String uuid,  String name,  String surname,   String email,  String password) {
         this.uuid = uuid;
         this.name = name;
         this.surname = surname;
