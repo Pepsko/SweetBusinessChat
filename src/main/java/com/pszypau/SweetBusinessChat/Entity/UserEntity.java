@@ -21,18 +21,15 @@ public class UserEntity implements UserDetails {
     private String uuid = UUID.randomUUID().toString();
     @NotBlank
     private String name;
-    @NotBlank
-    private String surname;
     @Email
     @NotBlank
     private String email;
     @NotBlank
     private String password;
 
-    public UserEntity( String uuid,  String name,  String surname,   String email,  String password) {
+    public UserEntity( String uuid,  String name,  String email,  String password) {
         this.uuid = uuid;
         this.name = name;
-        this.surname = surname;
         this.email = email;
         this.password = password;
     }
