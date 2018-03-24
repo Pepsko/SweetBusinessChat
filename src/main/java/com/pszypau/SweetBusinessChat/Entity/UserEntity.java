@@ -1,4 +1,4 @@
-package com.pszypau.SweetBusinessChat.User;
+package com.pszypau.SweetBusinessChat.Entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
