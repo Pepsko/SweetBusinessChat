@@ -4,8 +4,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.UUID;
@@ -32,6 +33,9 @@ public class UserEntity implements UserDetails {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public UserEntity() {
     }
 
     @Override

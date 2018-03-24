@@ -39,9 +39,9 @@ public class UserService {
         userRepository.save(userEntity);
     }
 
-    public UserDTO findUserByEmail(String email) {
+   /* public UserDTO findUserByEmail(String email) {
         return userMapper.toUserDTO(userRepository.findOneByEmail(email).orElseThrow(UserNotFoundException::new));
-    }
+    }*/
 
 
 }

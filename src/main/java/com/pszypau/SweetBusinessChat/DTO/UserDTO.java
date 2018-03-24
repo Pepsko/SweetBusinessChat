@@ -20,6 +20,9 @@ public class UserDTO {
         this.password = password;
     }
 
+    public UserDTO() {
+    }
+
     public int getId() {
         return id;
     }
